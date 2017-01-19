@@ -53,13 +53,13 @@ def read_data(offset, size, f):
         #return 0xABABABAB
 
     if   size == 8:
-        return struct.unpack('<Q', value)[0]
+        return ("0x%016x" % struct.unpack('<Q', value)[0])
     elif size == 4:
-        return struct.unpack('<I', value)[0]
+        return ("0x%08x" % struct.unpack('<I', value)[0])
     elif size == 2:
-        return struct.unpack('<H', value)[0]
+        return ("0x%04x" % struct.unpack('<H', value)[0])
     elif size == 1:
-        return struct.unpack('<B', value)[0]
+        return ("0x%02x" % struct.unpack('<B', value)[0])
 
 
 def print_struct(struct, data, output="results.txt"):
@@ -69,7 +69,8 @@ def print_struct(struct, data, output="results.txt"):
     fields = struct.get_info();
     for (location, size, name) in fields:
         value = read_data(location, size, b)
-        o.write("0x%08x |  %s(%s)\n" % ((value), name, size))
+        #o.write("0x%08x |  %s(%s)\n" % ((value), name, size))
+        o.write("%18s  |  %s(%s)\n" % ((value), name, size))
     b.close()
     o.close()
 
