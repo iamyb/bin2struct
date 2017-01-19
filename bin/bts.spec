@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['..\\src\\bts.py'],
-             pathex=['../lib/pyelftools', '../src', 'd:\\i_works\\a_tops\\20170104_pyelftools\\new\\bin'],
+             pathex=['../lib/pyelftools', '../src', 'd:\\i_works\\a_tops\\20170104_pyelftools\\bin2struct\\bin'],
              binaries=[],
              datas=[],
              hiddenimports=[],
