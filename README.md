@@ -8,14 +8,14 @@ Compile below c source code and execute the target, you will get one target file
  
 	// compile: $gcc -g test.c -o test.out
     // execute: $./test.out
- 
 	#include<stdio.h>
+
 	typedef struct sdef
 	{
-		u8  a;
-		u16 b;
-		u32 c;
-		u64 d;
+		unsigned char      a;
+		unsigned short     b;
+		unsigned int       c;
+		unsigned long long d;
 	}sdef;
 
 	int main(void)
@@ -48,7 +48,7 @@ to convert the dump into a readable text as below:
 
 ## Supports and Limitaions
 - Support DWARF2, DWARF3, DWARF4 format, only test on amd64 with gcc
-- Support base types, pointer types, enum, arrays, volatile type.
+- Support base types, pointer types, enum, arrays, volatile type and nest of those.
 - Other types like bit fields not added yet. 
 - Other platform may need additional effort as pyelftools limitation.
 
