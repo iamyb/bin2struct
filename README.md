@@ -1,7 +1,7 @@
 ## What is bin2struct
-bin2struct is a utility to convert the binary memory dump of c data structure to the readable text, with the annotated structure field's name for every line of data. 
+bin2struct is a utility to convert binary memory dump of c data structure to readable text, with annotated structure field's name for every line of data. 
 
-It use pyelftools to parse the elf target file and extract the structure member information from the dwarf. therefore, you must specify necessary compiler flag to build your target to have the dwarf contained in your target, like '-g' in the gcc.
+It uses pyelftools to parse ELF target and extract the structure member information(like location, size and name of leaf node of one structure) from DWARF. Therefore, you must specify necessary compiler flag to build your target to have the dwarf contained in your target, like '-g' in the gcc. pyelftools is also modified a bit to improve the performance of type extracting for large ELF target. 
 
 #### Usage example
 Compile below c source code and execute the target, you will get one target file "test.out" and one dump file "test.bin". 
