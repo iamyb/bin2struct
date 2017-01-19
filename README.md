@@ -5,26 +5,21 @@ It use pyelftools to parse the elf target file and extract the structure member 
 
 #### Usage example
 Compile below c source code and execute the target, you will get one target file "test.out" and one dump file "test.bin". 
- 
-	// compile: $gcc -g test.c -o test.out
-    // execute: $./test.out
+
+> $gcc -g test.c -o test.out   
+> $./test.out 
+
 	#include<stdio.h>
 
-	typedef struct sdef
-	{
+	typedef struct sdef{
 		unsigned char      a;
 		unsigned short     b;
 		unsigned int       c;
 		unsigned long long d;
 	}sdef;
 
-	int main(void)
-	{
-		sdef data;
-		data.a = 1;
-		data.b = 2;
-		data.c = 3;
-		data.d = 4;
+	int main(void){
+		sdef data = {1, 2, 3, 4};
 		
 		FILE *f = fopen("test.bin", "wb");
 		if(!f)
