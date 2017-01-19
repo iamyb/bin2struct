@@ -4,7 +4,7 @@ bin2struct is a utility to convert the binary memory dump of c data structure to
 It use pyelftools to parse the elf target file and extract the structure member information from the dwarf. therefore, you must specify necessary compiler flag to build your target to have the dwarf contained in your target, like '-g' in the gcc.
 
 #### Usage example
-After compiling below c source code and execution the target, you will have one target file "test.out" and one dump file "test.bin". 
+Compile below c source code and execute the target, you will get one target file "test.out" and one dump file "test.bin". 
  
 	// compile: $gcc -g test.c -o test.out
     // execute: $./test.out
@@ -37,7 +37,7 @@ After compiling below c source code and execution the target, you will have one 
 with those two files, you can use below command 
 > $python bts.py -t test.out -s sdef -b test.bin -o test.txt  
 
-to convert the dump into a readale text.
+to convert the dump into a readable text as below:
 
 	              0x01  |  sdef.a(1)
 	            0x0002  |  sdef.b(2)
