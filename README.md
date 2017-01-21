@@ -3,6 +3,7 @@ bin2struct is a utility to convert binary memory dump of c data structure to rea
 
 It uses pyelftools to parse ELF target and extract the structure member information(like location, size and name of leaf node of one structure) from DWARF. Therefore, you must specify necessary compiler flag to build your target to have the dwarf contained in your target, like '-g' in the gcc. pyelftools is also modified a bit to improve the performance of type extracting for large ELF target. 
 
+
 #### Usage example
 Compile below c source code and execute the target, you will get one target file "test.out" and one dump file "test.bin". 
 
@@ -42,7 +43,7 @@ to convert the dump into a readable text as below:
 
 
 ## Supports and Limitaions
-- Support DWARF2, DWARF3, DWARF4 format, only test on amd64 with gcc
+- Support DWARF2, DWARF3, DWARF4 format, only test on x86_64 with gcc
 - Support base types, pointer types, enum, arrays, volatile type and nest of those.
 - Other types like bit fields not added yet. 
 - Other platform may need additional effort as pyelftools limitation.
