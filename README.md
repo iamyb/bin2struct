@@ -42,7 +42,7 @@ to convert the dump into a readable text as below:
 
 
 
-## Supports and Limitaions
+## Supports and Limitations
 - Support DWARF2, DWARF3, DWARF4 format, only test on x86_64 with gcc
 - Support base types, pointer types, enum, arrays, volatile type and nest of those.
 - Other types like bit fields not added yet. 
